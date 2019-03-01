@@ -3,7 +3,9 @@
 
 ## SETUP
 
-Create your own '.env' file. Copy over the contents of '.env.dist'. Ask Adam to provide you with the environment values.
+Create your own '.env' file. Copy over the contents of '.env.dist'. Ask Adam to provide you with the environment values
+
+Use 'npm install' to install the dependencies in package.json
 
 Use 'npm start' to run this server on port 3001
 
