@@ -16,7 +16,7 @@ router.post('/logout', function (req, res, next) {
 });
 
 // CHECK STATUS
-router.post('/status', function (req, res, next) {
+router.get('/status', function (req, res, next) {
     if (req.user) {
         res.send({ username: req.user.username, isLoggedIn: true})
     } else {
