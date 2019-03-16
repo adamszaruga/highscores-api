@@ -3,7 +3,7 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
-
+var path = require('path')
 var passport = require('./passport.js');
 
 var indexRouter = require('./routes/index');
@@ -21,10 +21,16 @@ app.use(session({ secret: 'mymilkshakebringsalltheboystotheyard' }));
 
 app.use(passport.initialize());
 app.use(passport.session());
+// app.use('/', indexRouter);
 
-app.use('/', indexRouter);
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.use('/users', usersRouter);
 app.use('/scores', scoresRouter);
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
