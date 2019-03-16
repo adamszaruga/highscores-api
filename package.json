@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "cd client && npm install && npm start"
+    "postinstall": "cd client && npm install",
+    "build": "cd client && npm run build"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
